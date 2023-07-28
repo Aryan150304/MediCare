@@ -1,0 +1,35 @@
+.rounded-lg {
+    border-radius: 1rem !important;
+  }
+  
+  .text-small {
+    font-size: 0.9rem !important;
+  }
+  
+  .custom-separator {
+    width: 5rem;
+    height: 6px;
+    border-radius: 1rem;
+  }
+  
+  .text-uppercase {
+    letter-spacing: 0.2em;
+  }
+  
+  /*
+  *
+  * ==========================================
+  * FOR DEMO PURPOSES
+  * ==========================================
+  *
+  */
+  
+  body {
+    background: url("https://images.unsplash.com/photo-1566410824233-a8011929225c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    background-repeat: no-repeat;
+    background-size:cover;
+    justify-content: center;
+    height: 100vh;
+    color: #514B64;
+    min-height: 100vh;
+  }

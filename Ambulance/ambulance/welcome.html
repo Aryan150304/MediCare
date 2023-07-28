@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambulance Book</title>
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+    />
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css"
+    rel="stylesheet"
+    />
+    <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"
+    ></script>
+    
+    
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    
+</head>
+<body>
+    <center><div style="margin:100px">
+        <h3>USER</h3>
+        <span id="user" class="message">Hello, <Email-id></Email-id></span>
+        <div class="col" style="margin-top: 20px;">
+            <button class="btn btn-danger" onclick="logout()">Logout</button>
+        </div>
+        <div class="col">
+            <div class="needs"></div>    
+            <button class="btn btn-dark" style='margin-top: 40px;' onclick="book()">Provide an Ambulance</button>
+        </div>
+    </div></center>
+    <script src="index.js"></script>
+    <script>
+
+        
+
+
+        firebase.auth().onAuthStateChanged((user)=>{
+            if(!user){
+                location.replace("index.html")
+            }else{
+                document.getElementById("user").innerHTML = "Hello, "+user.email
+            }
+        })
+        function book() {
+            window.location.href = "book.html";
+        }
+        
+        function logout(){
+            firebase.auth().signOut()
+        }
+        </script>
+</body>
+</html>

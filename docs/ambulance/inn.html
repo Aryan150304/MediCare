@@ -1,0 +1,7 @@
+<div id="text">Hello, I am a text inside a div.</div>
+
+<script>
+  const text = document.getElementById("text").textContent;
+  const speech = new SpeechSynthesisUtterance(text);
+  window.speechSynthesis.speak(speech);
+</script>

@@ -1,0 +1,345 @@
+body{
+    background-color: white;
+    width: 100%;
+    height:100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-color: #DBF3FF;
+    background-image: linear-gradient(180deg, rgba(219, 243, 255, 1) 30%, rgba(244, 251, 255, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+ 
+
+.landing{
+    z-index:1;
+    text-align: center;
+    margin:0;
+}
+.navbar{
+    background-color: #DBF3FF !important;
+}
+.nav-link{
+    color: #3F4E73 ;
+    text-align: center;
+    font-weight: 500;
+}
+.active,.nav-link:hover{
+    color: #303E65 !important;
+    font-weight: 500;
+}
+.nav-link:hover{
+    text-decoration: underline;
+}
+.buttons{
+    margin-left:auto;
+    margin-right:30px;
+}
+.navbar{
+    margin-top:32px;
+    padding:0;
+}
+.navbar-nav{
+    margin-left:250px;
+    width:100%;
+}
+.container-fluid{
+    margin:0;
+}
+.nav-item{
+    margin-right:20px;
+}
+.nav-logo{
+    position: absolute;
+    top:0px;
+    left:30px;
+    z-index: 9;
+}
+.logo{
+    width:180px;
+    height: auto;
+}
+.user{
+    background-color:#373B7B !important;
+    padding:4px;
+    font-size: 0.9rem;
+}
+.userDet,.userDet:hover,.searchBtn:hover{
+    color:white !important;
+    font-size: 0.9rem;
+}
+.doc{
+    display: flex;
+   align-items: center;
+}
+ 
+/* paragraph section */
+.paras
+{
+    text-align:center;
+    margin-top:10px;
+}
+
+.homepara{
+    color: #303E65;
+    font-size: xx-large;
+    padding-top: 30px;
+    margin-bottom: 0;
+}
+.homeHead{
+    color: #303E65;
+    font-size:4.8rem;
+    padding-top:5px;
+    font-weight: 600;
+}
+.descPara{
+    color: #647695;
+    padding-top:15px;
+    font-size: 1.15rem;
+    font-weight:500;
+}
+.para1{
+    margin-bottom: 5px;
+}
+/* search bar section */
+.searchbars{
+    text-align:center;
+    margin-top:40px;
+}
+.bar1,.bar2{
+    height: 50px;
+    width: 280px;
+    border: none;
+    color: #6575B3;
+    font-weight:500;
+    padding-left:20px;
+    margin-bottom: 30px;
+}
+.bar2{
+    width:380px;
+}
+
+.searchBtn{
+    background-color:#373B7B !important;
+    color:white;
+    padding:5px;
+    position: absolute;
+    top:394px;
+    right:390px;
+    width:7rem;
+    border: none ;
+}
+.fa-solid{
+    margin-right:2px;
+}
+/* video call section */
+.videocall{
+    text-align: center;
+    width:60%;
+    margin:auto;
+    padding-top:10px;
+    padding-bottom:10px;
+    background-color: white !important;
+}
+
+/* .Consult-image{
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    background-color: white !important;
+    width:10rem;
+    height:auto;
+    padding:3px;
+    position: absolute;
+    left:200px;
+    top:105%;
+    box-shadow: 5px 10px 18px #888888:
+}
+.ChatPara{
+ color: #303E65;
+ font-size: large;
+ font-weight:500;
+ margin-bottom: 0;
+}
+.logoCon{
+    margin-right:5px;
+    margin-left: 5px;
+    margin-top:5px;
+}
+.Chatpara2{
+    font-size: small;
+    line-height: normal;
+    color: #647695;
+    font-weight: 500;
+}
+ */
+ .speciality{
+     width:45%;
+     margin-top:100px;
+     margin:auto;
+ }
+.specialityPara{
+    color: #303E65;
+    font-size: 2.8rem;
+    padding-top: 100px;
+    line-height: normal;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.specialitysubPara{
+    color: #B0BBD2;
+    padding-top:5px;
+    font-size: 1.15rem;
+    font-weight:500;
+}
+
+/* health issues */
+.health{
+    display: flex;
+    justify-content: center;
+    margin-top:50px;
+    margin-bottom:50px;
+}
+.baby{
+    background-color: #E4E7F3;
+    cursor:pointer;
+    padding:3px;
+    width:11rem;
+    height:9rem;
+    padding:10px;
+    margin-right:20px;
+    margin-left:20px;
+}
+.babyHealth{
+    color: #303E65;
+    font-weight: 550;
+    text-transform: capitalize;
+    margin-top:3px;
+    font-size: 1.1rem;
+   
+}
+.babyImage{
+    background-color: white;
+    padding: 10px;
+    margin-bottom:3px;
+    margin-top:20px;
+}
+
+
+.babyHealth:hover{
+    text-decoration: underline;
+}
+
+.button{
+    background-color:white;   
+    margin-bottom:70px;
+}
+.buttontext,.buttontext:hover{
+    background-color:#373B7B !important;
+    padding:3px;
+    color:#CDCEDE;
+    text-decoration: none;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.buttontext:hover{
+    text-decoration: underline;
+}
+.onlineDoc{
+  text-align:right;
+  margin:0;
+  padding:0;
+}
+.onlineDoctext{
+    text-align: left;
+}
+.specialpara2{
+    color:#B0BBD2;
+    width:55%;
+    font-size:1.05rem;
+    font-weight: 500;
+    line-height: 1.7rem;
+    margin-bottom: 30px;
+}
+.urgentDoc{
+    text-align:left;
+    margin:0;
+    padding:0;
+  }
+.urgentDoctext{
+    text-align: left;
+    margin-top:40px;
+}
+.sp1{
+    width:70%;
+    margin-left:120px;
+}
+.sp2,.b3{
+    margin-left:120px;
+}
+
+/* features section */
+.features{
+    margin:auto;
+    width: 46%;
+    text-align: left;
+}
+.featurePara{
+    color:#505D8F;
+    text-transform: capitalize;
+    font-size:1.15rem;
+    font-weight: 450;
+    margin-bottom:20px;
+}
+/* features div */
+.featurediv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:20px;
+    margin-bottom:50px;
+   
+}
+.flexDiv{
+    background-color: #FFFFFF;
+    cursor:pointer;
+    padding:3px;
+    width:10rem;
+    padding:10px;
+    margin-right:10px;
+
+}
+.flexDiv:hover{
+    background-image: linear-gradient(90deg, rgba(255, 222, 206, 1) 40%, rgba(255, 239, 232, 1) 100%, rgba(255, 255, 255, 1) 100%);
+}
+.flexDivText{
+    padding-left:5px;
+    color: #303E65;
+    font-weight: 550;
+    text-transform: capitalize;
+    margin-top:3px;
+    font-size: 1.1rem;
+   
+}
+/* media screens for phone and other devices  */
+@media only screen and (max-width: 600px) {
+    .navbar-nav{
+        margin-left:0px;
+        width:100%;
+    }
+    .user{
+       padding:3px;
+    }
+    .buttons{
+        margin:auto;
+    }
+    .logo{
+        width:150px;
+        height: auto;
+    }
+    .nav-logo{
+        position: absolute;
+        top:10px;
+        left:10px;
+        z-index: 9;
+    }
+}

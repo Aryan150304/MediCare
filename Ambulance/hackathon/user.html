@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Geolocation</title>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+	<!-- <script src="index.js"></script> -->
+</head>
+
+<body>
+	<div id="map" style="width:100%; height: 100vh"></div>
+	<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
+	<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+
+	<script>
+		var firebaseConfig = {
+			apiKey: "AIzaSyCCV881WHGbZJk5K_LbWmFmBK1e6qnI00U",
+			authDomain: "sharda-medicare-ambulance.firebaseapp.com",
+			databaseURL: "https://sharda-medicare-ambulance-default-rtdb.firebaseio.com",
+			projectId: "sharda-medicare-ambulance",
+			storageBucket: "sharda-medicare-ambulance.appspot.com",
+			messagingSenderId: "122149609155",
+			appId: "1:122149609155:web:6d7b3a59080ede32c0cc76"
+		};
+
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		
+		// Set database variable
+		var database = firebase.database()
+		var auth = firebase.auth()
+
+		var lat;
+		var long;
+		var user_ref = database.ref('users/'+'tarun9702')
+		user_ref.on('value',function(snapshot){
+			var data = snapshot.val()
+
+			lat = data.lat;
+			long = data.long;
+		})
+		var map = L.map('map').setView([28.47293078423405, 77.480161856278], 11);
+		mapLink = "<a href='http://openstreetmap.org'>OpenStreetMap</a>";
+		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: 'Leaflet &copy; ' + mapLink + ', contribution', maxZoom: 18 }).addTo(map);
+		
+		var markerOptions = {
+   			title: "MyLocation",
+			clickable: true,
+			draggable: true
+		}
+
+        // var marker = L.marker([28.2380, 83.9956],markerOptions).addTo(map);
+		// map.on('click', function (e) {
+            // 	console.log(e)
+            // 	var newMarker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
+        navigator.geolocation.watchPosition(function(position) {
+
+			console.log(lat +" "+ long)
+            var marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
+			L.circle([position.coords.latitude,position.coords.longitude],500).addTo(map)
+			L.Routing.control({
+				waypoints: [
+					L.latLng(position.coords.latitude, position.coords.longitude),
+					L.latLng(lat, long)
+				],
+				lineOptions: {
+					styles: [{color: 'green', opacity: 1, weight: 5}]
+				}
+			}).on('routesfound', function (e) {
+				var routes = e.routes;
+				console.log(routes);
+
+				// e.routes[0].coordinates.forEach(function (coord, index) {
+				// 	setTimeout(function () {
+				// 		marker.setLatLng([coord.lat, coord.lng]);
+				// 	}, 100 * index)
+				// })
+
+			}).addTo(map);
+		// });
+        
+    })
+    .catch(function(error) {
+      console.error("Error authenticating user:", error);
+    });
+
+
+	</script>
+
+
+</body>
+
+</html>

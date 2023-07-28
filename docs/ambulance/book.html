@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Sharing</title>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+    <form onsubmit="bookamb()" id="userForm">
+        <input type="text" name="username" id="username" class="form-control" required/>
+        <label class="form-label" for="username">username</label>
+        <button type="submit" class="btn btn-primary btn-block mb-4">
+            submit
+        </button>
+    </form>
+    <br>
+    <br>
+    <div id="user">Hello <Email-ID></Email-ID></div><br>
+    Provide Ambulance. Don't close this tab.
+    <script>
+        document.getElementById("userForm").addEventListener("submit",(event)=>{
+            event.preventDefault()
+        })
+        function bookamb(){
+            var username = document.getElementById('username').value
+            
+            navigator.geolocation.watchPosition(function(position) {
+                var lat = position.coords.latitude;
+                var lng = position.coords.longitude;
+                // Save the coordinates to the database
+                console.log(lat + " " + lng)
+                var updates = {
+                    lat: lat,
+                    long: lng,
+                    book: true
+                }
+                // console.log(uname)
+                database.ref('users/' + username).update(updates)
+            });
+        }
+        firebase.auth().onAuthStateChanged((user)=>{
+            if(!user){
+                location.replace("index.html")
+            }else{
+                document.getElementById("user").innerHTML = "Hello, "+user.email;
+                // bookamb();
+            }
+        })
+    </script>
+</body>
+</html>
